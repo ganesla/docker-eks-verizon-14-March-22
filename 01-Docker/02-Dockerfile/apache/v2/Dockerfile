@@ -1,0 +1,17 @@
+# Base Image. 
+FROM ubuntu:16.04 
+
+# Owner / Maintainer 
+MAINTAINER Amit Vashist <amitvashist7@outlook.com>
+
+# Update APT Repo
+RUN apt-get update 
+
+# Install Apache2 Packages 
+RUN apt-get install apache2 -y 
+
+# Add a Custom Web Page
+COPY index.html /var/www/html/index.html
+
+# Bring up the Service
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND" ]

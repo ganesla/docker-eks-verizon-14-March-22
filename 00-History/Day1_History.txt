@@ -113,3 +113,161 @@
   215  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' app-C-instance-1
   217  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
 ```
+
+```
+ 255  mkdir 01-DockerContainer
+  256  mkdir 02-Dockerfile
+  257  ls
+  258  docker run -it --name test-apache1 ubuntu:16.04
+  259  ls
+  260  cd 02-Dockerfile/
+  261  ls
+  262  mkdir apache
+  263  cd apache/
+  264  ls
+  265  vim Dockerfile
+  266  ls
+  267  docker build -t web .
+  268  docker images
+  269  docker tag web myapache
+  270  docker images
+  271  docker ps
+  272  docker kill $(docker ps -qa)
+  273  docker rm $(docker ps -qa)
+  274  docker ps -a
+  275  docker images
+  276  docker run -d --name test-1 myapache
+  277  docker ps
+  278  docker run -d --name test-2 myapache
+  279  dpc ps
+  280  docker ps
+  281  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  282  docker images
+  283  docker inspect e1660a756b3b
+  284  docker history  e1660a756b3b
+  285  ls
+  286  vim index.html
+  287  ls
+  288  mkdir v1
+  289  mv * v1/
+  290  ls
+  291  cp -rf v1 v2
+  292  ls
+  293  rm -rf v1/index.html
+  294  ls
+  295  cd v2/
+  296  ls
+  297  vim Dockerfile
+  298  docker build -t myapache:v2 .
+  299  docker images
+  300  docker run -d --name test-3 myapache:v2
+  301  docker ps
+  302  docker images
+  303  docker history myapache
+  304  docker history myapache:v2
+  305  docker --help
+  306  docker images
+  307  docker images --help
+  308  docker diff --help
+  309  docker diff e30d182e1243
+  310  docker ps
+  311  docker diff ea3cdff3e372
+  312  docker diff e5a2434b88e5
+  313  ls
+  314  cd ..
+  315  ls
+  316  sdiff v1/Dockerfile v2/Dockerfile
+  317  docker ps
+  318  ls
+  319  cd ..
+  320  ls
+  321  cd ..
+  322  ls
+  323  cd 02-Dockerfile/
+  324  ls
+  325  mkdir python
+  326  ls
+  327  cd python/
+  328  ls
+  329  vim app.py
+  330  ls
+  331  vim Dockerfile
+  332  vim req.txt
+  333  ls
+  334  vim app.py
+  335  ls
+  336  mkdir v1
+  337  mv * v1/
+  338  ls
+  339  vim v1/Dockerfile
+  340  ls
+  341  cd v1/
+  342  ls
+  343  docker build -t mypywebapp:v1 .
+  344  docker images
+  345  docker run -d --name pyapp mypywebapp:v1
+  346  docker ps
+  347  ls
+  348  docker ps
+  349  docker inspect b902e42cc335
+  350  netstat -tulnp
+  351  docker ps
+  352  docker images
+  353  docker ps
+  354  docker inspect pyapp
+  355  docker ps
+  356  ls
+  357  cd ..
+  358  ls
+  359  cd v2
+  360  ls
+  361  cp -rf v1 v2
+  362  ls
+  363  cd v2/
+  364  ls
+  365  vim Dockerfile
+  366  docker build -t mypywebapp:v2 .
+  367  ls
+  368  docker ps
+  369  docker images
+  370  docker run -d --name pyapp-2 mypywebapp:v2
+  371  docker ps
+  372  docker inspect pyapp-2
+  373  curl 172.17.0.6:8080
+  374  curl 172.17.0.6:8080/info
+  375  docker ps
+  376  ls
+  377  cd ..
+  378  ls
+  379  cp -rf v2 v3
+  380  ls
+  381  cd v3/
+  382  ls
+  383  vim Dockerfile
+  384  ls
+  385  vim app.py
+  386  ls
+  387  docker build -t mypywebapp:v3 .
+  388  docker run -d --name pyapp-3 mypywebapp:v3
+  389  docker ps
+  390  docker inspect pyapp-3
+  391  docker ps
+  392  curl  -v 172.17.0.7:443
+  393  curl  -v 172.17.0.7:3306
+  394  curl  -v 172.17.0.7:8080
+  395  curl  -v 172.17.0.7:5001
+  396  cat Dockerfile
+  397  ls
+  398  cd ..
+  399  ls
+  400  cd
+  401  docker images
+  402  docker ps
+  403  docker login
+  404  docker push mypywebapp:v2
+  405  docker tag mypywebapp:v2 amitvashist7/mypython-web-app-vz-14-mar-2022
+  406  docker images
+  407  docker push amitvashist7/mypython-web-app-vz-14-mar-2022
+  408  docker tag mypywebapp:v1 amitvashist7/mypython-web-app-vz-14-mar-2022:v1
+  409  docker push amitvashist7/mypython-web-app-vz-14-mar-2022:v1
+```
