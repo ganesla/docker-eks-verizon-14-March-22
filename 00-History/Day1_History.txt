@@ -35,3 +35,81 @@
   137  docker logout
   138  docker pull amitvashist7/apache-ex4:20200107
 ```
+
+```
+  142  docker images
+  143  docker pull ubuntu
+  144  docker pull ubuntu:16.04
+  145  docker images
+  146  docker images ubuntu:16.04
+  147  docker images inspect ubuntu:16.04
+  148  docker  inspect ubuntu:16.04
+  149  docker history  ubuntu:16.04
+  150  docker history  ubuntu:latest
+  151  ls
+  152  docker ps
+  153  docker container ls
+  154  docker ps -a
+  155  docker container ls -a
+  156  docker run -it ubuntu:16.04
+  157  docker ps
+  158  docker ps -a
+  159  docker run -it ubuntu:16.04
+  160  docker ps
+  161  docker ps -a
+  162  docker run -it ubuntu:16.04
+  163  docker ps
+  164  docker ps -a
+  165  docker start 99979be9e5a1
+  166  docker ps
+  167  docker -it 99979be9e5a1
+  168  docker -it 99979be9e5a1 bash
+  169  docker ps
+  170  docker attach 99979be9e5a1
+  171  docker exec -it 99979be9e5a1 -- ls -ltr
+  172  docker exec -it 99979be9e5a1  ls -ltr
+  173  docker exec -it 99979be9e5a1  cat amit.txt
+  174  docker exec -it 99979be9e5a1  ps -ef
+  175  docker ps
+  176  docker stop 99979be9e5a1
+  177  docker ps -a
+  178  docker kill bde985e38056
+  179  docker ps -a
+  180  docker ps
+  181  docker ps -q
+  182  docker kill $(docker ps -q)
+  183  docker ps
+  184  docker ps -a
+  185  docker start 99979be9e5a1
+  186  docker exec -it 99979be9e5a1  cat amit.txt
+  187  docker kill $(docker ps -q)
+  188  docker ps
+  189  docker ps -q
+  190  docker ps -a
+  191  docker ps -aq
+  192  docker rm  $(docker ps -aq)
+  193  docker ps -a
+  194  docker run -it ubuntu:16.04
+  195  docker run -itd ubuntu:16.04
+  196  docker ps
+  197  docker attach 2ea1954fa780
+  198  docker kill $(docker ps -q)
+  199  docker rm  $(docker ps -aq)
+  200  docker run -itd --name app-A-instance-1 ubuntu:16.04
+  201  docker run -itd --name app-A-instance-2 ubuntu:16.04
+  202  docker run -itd --name app-B-instance-2 ubuntu:16.04
+  203  docker run -itd --name app-B-instance-1 ubuntu:16.04
+  204  docker ps
+  205  docker ps -a
+  206  docker ps -aq
+  207  docker ps -q
+  208  docker ps -q -l
+  209  docker ps  -l
+  210  docker run -itd --name app-C-instance-1 ubuntu:16.04
+  211  docker ps  -l
+  212  docker ps  -l -q
+  213  docker inspect app-C-instance-1
+  214  docker ps
+  215  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' app-C-instance-1
+  217  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+```
