@@ -13,3 +13,12 @@
   106  sh install-docker.sh
   107  docker version
 ```
+
+```
+  117  docker version
+  118  docker run busybox echo "Hello World"
+  119  docker images
+  120  docker run busybox echo "Welcome to the world of docker.!"
+  121  docker ps
+  122  docker ps -a
+```
