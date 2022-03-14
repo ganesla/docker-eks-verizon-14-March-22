@@ -22,3 +22,16 @@
   121  docker ps
   122  docker ps -a
 ```
+
+```
+ 129  docker pull ubuntu
+  130  docker images
+  131  docker pull amitvashist7/k8s-tiny-web
+  132  docker pull amitvashist7/apache-ex4
+  133  docker login
+  134  docker pull amitvashist7/apache-ex4
+  135  ls
+  136  docker images
+  137  docker logout
+  138  docker pull amitvashist7/apache-ex4:20200107
+```
