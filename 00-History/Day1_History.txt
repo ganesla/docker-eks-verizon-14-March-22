@@ -1,0 +1,15 @@
+```
+ 95  git clone https://github.com/amitvashisttech/docker-eks-verizon-14-March-22.git
+   96  ls
+   97  rm -rf docker-eks-veriszon-14-March-22
+   98  ls
+   99  cd docker-eks-verizon-14-March-22/
+  100  ls
+  101  git pull
+  102  cd 01-Docker/
+  103  ls
+  104  cd 00-Setup/
+  105  ls
+  106  sh install-docker.sh
+  107  docker version
+```
