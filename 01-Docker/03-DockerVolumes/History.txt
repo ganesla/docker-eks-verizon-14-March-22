@@ -1,0 +1,77 @@
+```
+  123  mkdir 03-DockerVolumes
+  124  ls
+  125  cd 03-DockerVolumes/
+  126  ls
+  127  docker volumes ls
+  128  docker volume ls
+  129  docker volume rm nexus-data
+  130  docker volume ls
+  131  docker volume create my-vol
+  132  docker volume ls
+  133  docker volume inspect my-vol
+  134  ls -ltr /var/lib/docker/volumes/my-vol/_data/
+  135  docker run -it --name voltest1 --mount source=my-vol,target=/app ubuntu:16.04
+  136  docker ps
+  137  docker inspect c00ad33e3697
+  138  ls
+  139  docker ps
+  140  docker kill $(docker ps -qa)
+  141  docker ps -a
+  142  docker rm $(docker ps -qa)
+  143  docker ps -a
+  144  docker volume ls
+  145  cat /var/lib/docker/
+  146  ls
+  147  cat /var/lib/docker/volumes/my-vol/_data/hello.txt
+  148  docker run -it --name voltest1 --mount source=my-vol,target=/app ubuntu:16.04
+  149  docker volume ls
+  150  docker volume rm my-vol
+  151  docker ps
+  152  docker ps -a
+  153  docker rm $(docker ps -qa)
+  154  docker volume rm my-vol
+  155  ls
+  156  docker run --name alpha -it -v /var/log/amit ubuntu
+  157  docker ps
+  158  docker inspect alpha
+  159  docker volume ls
+  160  cd /var/lib/docker/volumes/7a5f655445ec10b639e93e7acd3eddf16ab96578c0cf7eff6d5032dacab9a22c/_data/
+  161  ls
+  162  cat hello.txt
+  163  hostname >> hello.txt
+  164  date >> hello.txt
+  165  cd -
+  166  docker attach alpha
+  167  docker run --name beta -it -v /var/log/amit:ro ubuntu
+  168  pwd
+  169  cd ..
+  170  ls
+  171  cd ..
+  172  ls
+  173  pwd
+  174  docker run --name beta1 -it -v /root/docker-eks-verizon-14-March-22:/var/lib/git ubuntu
+  175  docker run --name beta2 -it -v /root/docker-eks-verizon-14-March-22:/var/lib/git:ro ubuntu
+  176  docker ps
+  177  docker inspect beta1
+  178  docker kill $(docker ps -qa)
+  179  docker rm $(docker ps -qa)
+  180  docker volumes ls
+  181  docker volume ls
+  182  docker volume ls -q
+  183  docker volume rm 7a5f655445ec10b639e93e7acd3eddf16ab96578c0cf7eff6d5032dacab9a22c
+  184  ls
+  185  docker run -itd --name data -v /var/www/html -v /var/log/amit -v /etc/amit busybox
+  186  docker ps
+  187  docker inspect data
+  188  ls
+  189  docker images
+  190  docker run -d --name test-apache1 --volume-from data myapache:v2
+  191  docker run -d --name test-apache2 --volumes-from data myapache:v2
+  192  docker run -d --name test-apache3 --volumes-from data myapache:v2
+  193  docker ps
+  194  docker inspect test-apache2
+  195  docker inspect test-apache3
+  196  ls
+  197  cd /var/lib/docker/volumes/e5261ab1c0ce3145e5cf71f5cfda1de6b01de38f5a216f8c3da130ad02ac1c35/_data
+```
