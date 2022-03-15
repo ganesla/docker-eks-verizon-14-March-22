@@ -97,3 +97,31 @@
    36  docker network rm mybr0
    37  docker network ls
 ```
+
+
+```
+ 53  git add . ; git commit -m "04-Network" ; git push
+   54  ls
+   55  docker ps
+   56  docker network ls
+   57  docker ps -a
+   58  docker run -itd --name test-none --network none ubuntu:16.04
+   59  docker ps
+   60  docker exec -it test-none  ip addr
+   61  docker exec -it test-none  ifconfig
+   62  docker inspect test-none
+   63  docker run -it ubuntu:16.04
+   64  docker ps
+   65  docker commit -p -m "Netools Installed" 0bc38d69f83e myubuntu:v1
+   66  docker images
+   67  docker run -itd --name test-none-1  --network none myubuntu:v1
+   68  docker run -itd --name test-none-2  --network host myubuntu:v1
+   69  docker ps
+   70  docker exec -it test-none-1 ifconfig
+   71  docker run -itd --name test-3  myubuntu:v1
+   72  docker exec -it test-none-1 ifconfig
+   73  docker exec -it test-3 ifconfig
+   74  docker exec -it test-none-2 ifconfig
+   75  ls
+   76  cd 01-Docker/
+```
