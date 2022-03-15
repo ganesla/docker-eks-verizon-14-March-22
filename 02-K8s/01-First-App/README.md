@@ -34,3 +34,36 @@ kubectl delete pod hello-k8s
 kubectl get pods -o wide
 kubectl delete pod --all
 ```
+
+
+Note Point : In Case you are getting imagepull error stating that you have reached to max limit of downloads, then apply the following solution. 
+
+# Docker login
+```
+docker login
+ls /root/.docker/config.js
+```
+
+# Create a Secret in K8s for Docker Registry
+```
+kubectl create secret generic regcred --from-file=.dockerconfigjson=/root/.docker/config.json --type=kubernetes.io/dockerconfigjson
+
+kubectl get secrets
+```
+
+# Now you can source your secret in POD Deployment file & Good to go. 
+```
+kubectl run hello-k8s --image=nginx --port=80 -o yaml --dry-run > nginx-pod.yaml
+```
+
+## Update the Pull Defination in Yaml File 
+```
+      imagePullSecrets:
+      - name: regcred
+```
+
+## Now deploy the nginx POD.
+```
+kubectl apply -f nginx-pod.yaml
+```
+
