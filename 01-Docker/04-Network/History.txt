@@ -56,3 +56,44 @@
   288  docker history bdd791a84674
   289  docker run -d --name test-11 -P  mypywebapp:v3
 ```
+
+
+```
+ 1  docker ps
+    2  docker kill $(docker ps -qa )
+    3  docker rm $(docker ps -qa )
+    4  docker network ls
+    5  docker network create my-net
+    6  docker network ls
+    7  docker network inspect my-net
+    8  docker network create --help
+    9  docker network create --driver=bridge --subnet=172.28.0.0/16 --ip-range=172.28.5.1/24 --gateway=172.28.5.254
+   10  docker network create --driver=bridge --subnet=172.28.0.0/16 --ip-range=172.28.5.1/24 --gateway=172.28.5.254 mybr0
+   11  docker network ls
+   12  docker network inspect mybr0
+   13  docker images
+   14  docker run -d --name test-1 --network mybr0 -P mypywebapp:v2
+   15  docker run -d --name test-2 --network mybr0 -P mypywebapp:v2
+   16  docker run -d --name test-3 -P mypywebapp:v2
+   17  docker ps
+   18  ls
+   19  cat docker-eks-verizon-14-March-22/00-History/Day1_History.txt | grep -i format
+   20  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+   21  docker inspect test-1
+   22  docker inspect test-2
+   23  curl "172.28.5.1"
+   24  curl 172.28.5.1:8080
+   25  docker network ls
+   26  docker ps
+   27  docker inspect 4e4d657763c3
+   28  docker inspect test-2
+   29  docker inspect test-3
+   30  ip addr
+   31  route -n
+   32  docker kill $(docker ps -qa )
+   33  docker rm  $(docker ps -qa )
+   34  docker network ls
+   35  docker network rm my-net
+   36  docker network rm mybr0
+   37  docker network ls
+```
