@@ -1,0 +1,58 @@
+```
+ 234  docker ps
+  235  docker network ls
+  236  docker network inspect 6c9beb2e4662
+  237  ip addr
+  238  docker images
+  239  docker run -d --name test-1 myapache:v2
+  240  docker ps
+  241  docker inspect test-1
+  242  docker network inspect 6c9beb2e4662
+  243  docker inspect test-1
+  244  docker network inspect 6c9beb2e4662
+  245  docker run -d --name test-2 myapache:v2
+  246  docker run -d --name test-3 myapache:v2
+  247  docker network inspect 6c9beb2e4662
+  248  curl 172.17.0.2
+  249  curl 172.17.0.3
+  250  curl 172.17.0.4
+  251  route -n
+  252  curl 172.17.0.4
+  253  curl localhost
+  254  netstat -tulnp
+  255  docker run -d --name test-4 -p 80:80 myapache:v2
+  256  docker ps
+  257  netstat -tulnp
+  258  systemctl status docker
+  259  curl localhost
+  260  ls
+  261  docker ps
+  262  ip addr
+  263  systemctl status docker
+  264  ip addr
+  265  docker ps
+  266  netstat -tulnp
+  267  systemctl status docker
+  268  ls
+  269  docker image
+  270  docker images
+  271  docker run -d --name test-5 -p 80:80 myapache:v2
+  272  netstat -tulnp
+  273  docker run -d --name test-6 -p 85:80 myapache:v2
+  274  docker ps
+  275  netstat -tulnp
+  276  ls
+  277  docker run -d --name test-7 -P  myapache:v2
+  278  docker ps
+  279  docker images
+  280  docker run -d --name test-7 -P  amitvashist7/mypython-web-app-vz-14-mar-2022:v1
+  281  docker run -d --name test-8 -P  amitvashist7/mypython-web-app-vz-14-mar-2022:v1
+  282  docker ps
+  283  docker run -d --name test-9 -P  amitvashist7/mypython-web-app-vz-14-mar-2022
+  284  docker ps
+  285  docker run -d --name test-10 -P  amitvashist7/mypython-web-app-vz-14-mar-2022
+  286  docker ps
+  287  docker images
+  288  docker history bdd791a84674
+  289  docker run -d --name test-11 -P  mypywebapp:v3
+```
