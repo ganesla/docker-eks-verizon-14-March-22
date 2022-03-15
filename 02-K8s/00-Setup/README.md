@@ -36,7 +36,7 @@ Note :
 ```
 vagrant.exe ssh master
 sudo su - 
-git clone To https://github.com/amitvashisttech/docker-eks-verizon-14-March-22.git
+git clone https://github.com/amitvashisttech/docker-eks-verizon-14-March-22.git
 cd docker-eks-verizon-14-March-22/02-K8s/00-Setup
 sh install-k8s-master-node.sh
 
